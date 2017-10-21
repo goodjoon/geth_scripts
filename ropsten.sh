@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export ETH_HOME=$HOME/blockchain/ethereum/go-ethereum
+export ETH_HOME=$HOME/blockchain/ethereum
 export ETH_DBROOT=$ETH_HOME/db
 export BIN=$ETH_HOME/bin/geth
 
