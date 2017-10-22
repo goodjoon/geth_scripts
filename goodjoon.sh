@@ -4,10 +4,10 @@ export ETH_HOME=$HOME/blockchain/ethereum/go-ethereum
 export ETH_DBROOT=$ETH_HOME/db
 export BIN=$ETH_HOME/bin/geth
 
-export DBNAME=mynet
+export DBNAME=goodjoon
 export NETWORK_ID=1000
-export PORT=30313
-export RPC_PORT=8555
+export PORT=30303
+export RPC_PORT=8545
 export IPC_PATH=geth.ipc
 export DATADIR=${ETH_DBROOT}/${DBNAME}
 
@@ -20,10 +20,10 @@ CURDATETIME=`date +"%Y%m%d"`
 
 CMD=$1
 
-if [ "$CMD" = "miner" ] || [ "$CMD" = "mine" ] || [ "$CMD" = "--mine" ]
+if [ "$CMD" = "mine" ]
 then
 	echo Running Miner...
-	OPTS="--datadir ${DATADIR} --rpc --rpcaddr 0.0.0.0 --rpcport ${RPC_PORT} --rpcapi ${RPC_API} --ipcapi ${IPC_API} --rpccorsdomain \"*\" --ipcpath ${IPC_PATH} --mine --minerthreads 1 --dev"
+	OPTS="--datadir ${DATADIR} --port ${PORT} --rpc --rpcaddr 0.0.0.0 --rpcport ${RPC_PORT} --rpcapi ${RPC_API} --ipcapi ${IPC_API} --rpccorsdomain \"*\" --ipcpath ${IPC_PATH} --mine --minerthreads 1 --dev"
 	shift
 	echo Options : $OPTS
 	nohup $BIN $OPTS $* > ${ETH_HOME}/logs/rinkeyby-mine.log &
