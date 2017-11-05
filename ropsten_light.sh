@@ -19,15 +19,7 @@ CURDATETIME=`date +"%Y%m%d"`
 CMD=$1
 
 #if [ "$CMD" = "miner" ] || [ "$CMD" = "mine" ] || [ "$CMD" = "--mine" ]
-if [ "$CMD" = "mine" ]
-then
-	echo Running Miner...
-	OPTS="--datadir ${DATADIR} --rpc --rpcaddr 0.0.0.0 --rpcport ${RPC_PORT} --rpcapi ${RPC_API} --rpccorsdomain \"*\" --ipcpath ${IPC_PATH} --testnet --etherbase 0 --cache 64 --syncmode light"
-	shift
-	echo Options : $OPTS
-	nohup $BIN $OPTS $* > ${ETH_HOME}/logs/${DBNAME}.log &
-#tail -f ${ETH_HOME}/logs/${CURDATETIME}.log 
-elif [ "$CMD" = "attach" ]
+if [ "$CMD" = "attach" ]
 then
 	OPTS="--datadir ${DATADIR} attach ipc:${DATADIR}/${IPC_PATH}"
 	shift
