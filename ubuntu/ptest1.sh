@@ -1,13 +1,13 @@
 #!/bin/sh
 
-export ETH_HOME=$HOME/blockchain/ethereum
+export ETH_HOME=$HOME/blockchain/ethereum/go-ethereum
 export ETH_DBROOT=$ETH_HOME/db
 export BIN=$ETH_HOME/bin/geth
 
 export DBNAME=ptest1
 export NETWORK_ID=55
 export PORT=30313
-export RPC_PORT=8566
+export RPC_PORT=8555
 export IPC_PATH=geth.ipc
 export DATADIR=${ETH_DBROOT}/${DBNAME}
 
